@@ -1,0 +1,39 @@
+﻿@if (@ViewBag.IsHtml == true)
+{
+    @Html.Raw(ViewBag.Text)
+}
+else
+{
+    <div id="view">
+
+        @if (@ViewBag.Image != null)
+        {
+            <div id="image" style="text-align: center"></div>
+        }
+        else
+        {
+            if (string.IsNullOrEmpty(@ViewBag.Text))
+            {
+                <div style="text-align: center"><img src="..\..\Content\images\404.jpg" /></div>
+            }
+        }
+
+        @if (!string.IsNullOrEmpty(@ViewBag.Text))
+        {
+            if (@ViewBag.Image != null) { <br /> }
+            <div id="text">
+                @Html.Raw(ViewBag.Text)
+            </div>
+        }
+
+    </div>
+
+    if (@ViewBag.Image != null)
+    {
+        <script>
+            var image = new Image();
+            image.src = '@ViewBag.Image';
+            document.getElementById("image").appendChild(image);
+        </script>
+    }
+}

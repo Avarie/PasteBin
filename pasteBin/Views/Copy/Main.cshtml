@@ -1,0 +1,32 @@
+﻿@{ Layout = null; }
+
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <a class="brand" href='#/paste'>pasteBin</a>
+
+            <div class="pull-right">
+                <input class="btn btn-small btn-success"
+                       ng-disabled=" (!imageSet && text =='') || isInProgress "
+                       type="button" value=" PUBLISH "
+                       ng-click="publish()" />
+            </div>
+        </div>
+    </div>
+</div>
+
+<div style="text-align: center">
+    <canvas id="img_canvas" width="1" height="1"></canvas>
+</div>
+
+@* all -> 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'p', 'pre', 'quote', 'bold', 'italics', 'underline', 'strikeThrough', 'ul', 'ol', 'redo', 'undo', 'clear', 'justifyLeft', 'justifyCenter', 'justifyRight', 'justifyFull', 'indent', 'outdent', 'html', 'insertImage', 'insertLink', 'insertVideo', 'wordcount', 'charcount'*@
+
+<div class="well well-small">
+    <div text-angular ng-model="text"
+         text-angular-name="EDIT NOTE"
+         ta-toolbar="[['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'p', 'pre', 'quote', 'bold', 'italics', 'underline', 'strikeThrough', 'ul', 'ol', 'redo', 'undo', 'clear', 'justifyLeft', 'justifyCenter', 'justifyRight', 'justifyFull', 'indent', 'outdent', 'html', 'insertImage', 'insertLink']]"
+         ta-toolbar-class="btn-toolbar"
+         ta-toolbar-group-class="btn-group"
+         ta-toolbar-button-class="btn btn-default"
+         ta-toolbar-button-active-class="active"></div>
+</div>
