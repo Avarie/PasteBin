@@ -2,7 +2,11 @@
 *.vs
 *.user
 _ReSharper.*
+jquery*.*
+angular-*.*
 bin
 obj
 packages
+Content
+i18n
 pasteBin/Web.config
